@@ -8,7 +8,7 @@ class Devise::ChangePasswordsController < ApplicationController
   end
 
   def update
-    self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
+    #self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
 
     if resource.update_with_password(params[resource_name])
       set_flash_message :notice, :updated if is_navigational_format?
@@ -16,10 +16,18 @@ class Devise::ChangePasswordsController < ApplicationController
       respond_with resource, :location => after_update_path_for(resource)
     else
       clean_up_passwords(resource)
-      respond_with_navigational(resource){ render_with_scope :edit }
+      redirect_to stored_location_for(scope) || :root
+      #respond_with_navigational(resource){ render_with_scope :edit }
     end
   end
 
+  # if resource.update_with_password(params[resource_name])
+  #   set_flash_message :notice, :updated
+  #   redirect_to stored_location_for(scope) || :root
+  # else
+    # clean_up_passwords(resource)
+    #   render_with_scope :show
+    # end
 
   protected
 
@@ -34,7 +42,7 @@ class Devise::ChangePasswordsController < ApplicationController
     end
 
     def authenticate_scope!
-      send(:"authenticate_#{resource_name}!", true)
+      send(:"authenticate_#{resource_name}!")
       self.resource = send(:"current_#{resource_name}")
     end
 
