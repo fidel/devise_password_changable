@@ -9,6 +9,6 @@ module DevisePasswordChangable
   end
 end
 
-Devise.add_module :password_changable, :controller => :password_changable, :model => 'devise_password_changable/models/password_changable', :route => :password_change
+Devise.add_module :password_changable, :controller => :change_passwords, :model => 'devise_password_changable/models/password_changable', :route => :password_change
 
 require 'devise_password_changable/routes'
