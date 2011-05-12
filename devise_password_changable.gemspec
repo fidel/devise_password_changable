@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Szymon Fiedler"]
   s.date = %q{2011-05-12}
-  s.description = %q{Extension for devise to provide password change without using registerable}
+  s.description = %q{Extension for devise to provide password change without using registerable.}
   s.email = %q{fidelski@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "app/controllers/devise/change_passwords_controller.rb",
     "app/views/devise/change_passwords/show.html.erb",
     "config/locales/en.yml",
+    "devise_password_changable.gemspec",
     "lib/devise_password_changable.rb",
     "lib/devise_password_changable/controllers/helpers.rb",
     "lib/devise_password_changable/models/password_changable.rb",
@@ -39,7 +40,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.7.1}
-  s.summary = %q{Extension for devise to provide password change}
+  s.summary = %q{Extension for devise to provide password change.}
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
