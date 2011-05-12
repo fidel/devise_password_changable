@@ -1,9 +1,41 @@
-= devise_password_changable
+= Devise Password Changable
 
-Description goes here.
+Extension for devise to provide password change without using registerable module.
+
+== Installation for Rails 3
+
+Add line below to your Gemfile:
+
+  gem 'devise_password_changable'
+  
+and run _bundle_.
+
+In your custom _User_ model in devise block add:
+
+  password_changable
+
+so, it'll look like this:
+
+  devise :database_authenticatable, :recoverable, :trackable, :password_changable
+
+Now, password change is available to your users, so they can visit e.g. path yourapp.com/users/password_change and change their password.
+
+== Customizing
+
+You can customize view "devise-way" if you are using _scoped_views_, by creating your own, customized show view file:
+
+  app
+    views
+      users
+        change_passwords
+          show.html.erb
+          
+== ToDo
+
+Write some tests with test_app...
 
 == Contributing to devise_password_changable
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
