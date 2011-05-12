@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "devise_password_changable"
   gem.homepage = "http://github.com/fidel/devise_password_changable"
   gem.license = "MIT"
-  gem.summary = %Q{Extension for devise to provide password change}
-  gem.description = %Q{Extension for devise to provide password change without using registerable}
+  gem.summary = %Q{Extension for devise to provide password change.}
+  gem.description = %Q{Extension for devise to provide password change without using registerable.}
   gem.email = "fidelski@gmail.com"
   gem.authors = ["Szymon Fiedler"]
   # dependencies defined in Gemfile
