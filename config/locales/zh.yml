@@ -1,0 +1,4 @@
+en:
+  devise:
+    change_passwords:
+      updated: 你的新密码已经保存
